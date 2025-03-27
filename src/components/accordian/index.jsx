@@ -29,26 +29,23 @@ export default function Accordian() {
   }
 
   function toggleMultiSelection() {
-   
-      setEnableMulSel(!enableMulSel);
-      setSelected(null); // Reset single selection
-      setMultiple([]); // Reset multiple selection
-     
+    setEnableMulSel(!enableMulSel);
+    setSelected(null); // Reset single selection
+    setMultiple([]); // Reset multiple selection
   }
   return (
     <>
       <div className="wrapper">
         <button onClick={toggleMultiSelection}>
-        {enableMulSel ? "Disable Multi-Selection" : "Enable Multi-Selection"}
+          {enableMulSel ? "Disable Multi-Selection" : "Enable Multi-Selection"}
         </button>
         <div className="accordian">
           {data && data.length > 0 ? (
-            data.map((dataItem) =>{
-
+            data.map((dataItem) => {
               const isExpanded = enableMulSel
-              ? multiple.includes(dataItem.id)
-              : selected === dataItem.id;
-                
+                ? multiple.includes(dataItem.id)
+                : selected === dataItem.id;
+
               return (
                 <div className="item" key={dataItem.id}>
                   <div
